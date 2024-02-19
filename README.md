@@ -53,7 +53,7 @@ author:
 license: (ISC)
 ```
 
-After you have provided the necessary information, ` npm init` will generate a package.json file in your project directory with the configured settings. This file serves as a manifest for your project and contains information about its dependencies, scripts, and other metadata.
+After you have provided the necessary information, `npm init` will generate a package.json file in your project directory with the configured settings. This file serves as a manifest for your project and contains information about its dependencies, scripts, and other metadata.
 
 3. Install Express.js by running the command
 `npm install express`
@@ -143,6 +143,8 @@ const mongoose = require('mongoose')
 
 ## Setting Up Mongoose & Dotenv:
 1. Connect to a MongoDB database by calling the mongoose.connect() function and passing in the MongoDB connection URL:
+  #### Make sure to replace `'mongodb://localhost/mydatabase'`` with your own connection string!
+
 ```js
 mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -172,6 +174,7 @@ node_modules
  ```
 - key and value pair
 - convention to keep key in all capital letters
+  #### Make sure to replace this with your own connection string!
 
 
 4. Import dotenv and config in server.js
