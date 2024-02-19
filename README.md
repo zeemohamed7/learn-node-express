@@ -15,7 +15,7 @@ In summary, Node.js allows us to use JS on the server-side, and Express.js provi
 
 ## Setting up
 Install Node.js
-Note: this only needs to be done once, if you’ve done this before, skip this step!
+**Note:** this only needs to be done once, if you’ve done this before, skip this step!
 
 1. Visit the official Node.js website (https://nodejs.org) and download the latest version compatible with your operating system.
 
@@ -47,9 +47,11 @@ keywords: web application, node.js, express
 author: John Doe
 license: (ISC)
 ```
-**Note:**
-Make sure to change entry point from index.js to server.js
 
+``` diff
+- **Note:**
+- Make sure to change entry point from index.js to server.js
+```
 After you have provided the necessary information, npm init will generate a package.json file in your project directory with the configured settings. This file serves as a manifest for your project and contains information about its dependencies, scripts, and other metadata.
 
 3. Install Express.js by running the command
