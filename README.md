@@ -76,7 +76,7 @@ const app = express()`
 ```
 
 6. Define a route that responds with "Hello, World!":
-```
+```js
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
@@ -91,7 +91,7 @@ app.get('/', (req, res) => {
 
 
 5. Start the server: 
-```
+```js
 app.listen(3000, () => {
   console.log('Server started on port 3000');
 });
@@ -134,7 +134,7 @@ We import dotenv to load environment variables, and mongoose to work with MongoD
 
 ## Setting Up Mongoose & Dotenv:
 1. Connect to a MongoDB database by calling the mongoose.connect() function and passing in the MongoDB connection URL:
-```
+```js
 mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     // Connection successful
@@ -158,17 +158,21 @@ node_modules
 ```
 
 3. In .env file: 
-`` DB_CONNECTION = mongodb://localhost/mydatabase ``
+```js
+ DB_CONNECTION = mongodb://localhost/mydatabase
+ ```
 - key and value pair
 - convention to keep key in all capital letters
 
 
 4. Import dotenv and config in server.js
-`` require('dotenv').config() ``
-
-
-5. Instead of connection string, put process.env.DB_CONNECTION
+```js
+ require('dotenv').config()
 ```
+
+
+6. Instead of connection string, put process.env.DB_CONNECTION
+```js
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     // Connection successful
@@ -195,7 +199,7 @@ We will create a simple to-do application to understand these.
 
 1. Create your model (Todo.js) inside of models folder
 2. Create a model for todo item:
-```
+```js
 const mongoose = require('mongoose')
 // Create Schema
 const todoSchema = mongoose.Schema ({
@@ -216,12 +220,14 @@ module.exports = Todo;
 ### Controllers
 1. Create controller (todosController.js) inside of controllers folder
 2. Import Todo model
-` const Todo = require('./models/todo') `
+```js
+const Todo = require('./models/todo')
+```
 
 
 3. In this file, you can define your CRUD operations (Create, Read, Update and Delete)
 For example, to create a todo item:
-```
+```js
 // Create a new todo item
 const createTodo = async (req, res) => {
   try {
@@ -243,7 +249,7 @@ module.exports = createTodo
 > *const todo = await Todo.create({ title, description })*: uses the Todo model (assumed to be imported and defined earlier) to create a new todo item in the database. The await keyword is used because the Todo.create() function is an asynchronous operation that returns a promise. By using await, we wait for the promise to resolve and assign the created todo item to the todo variable.
 
 ### Other controllers: 
-```
+```js
 // Get all todo items
 const getAllTodos = async (req, res) => {
   try {
@@ -323,7 +329,7 @@ Export this router!
 ### Server.js
 To tie everything back together:
 1. In server.js, import and mount the routes
-```
+```js
 // Import routes
 const todosRoutes = require('./todosRoutes');
 
