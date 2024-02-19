@@ -113,7 +113,7 @@ So far we have:
 Open a web browser and visit http://localhost:3000. You should see the message "Hello, World!" displayed.
 
 
-** Note: node and nodemon **
+**Note: node and nodemon**
 When running node server.js, you are executing the server.js file using the Node.js runtime. It starts the server and runs the code within server.js. However, if you make any changes to the server.js file, you need to manually stop and restart the server using node server.js again for those changes to take effect. 
 On the other hand, nodemon automatically restarts the server whenever changes are made to the files.
 
@@ -129,7 +129,9 @@ We import dotenv to load environment variables, and mongoose to work with MongoD
 
 
 2. Import mongoose
-`` const mongoose = require('mongoose') ``
+```js
+const mongoose = require('mongoose')
+ ```
 
 
 ## Setting Up Mongoose & Dotenv:
