@@ -35,23 +35,25 @@ cd express-project `
 `npm init
 // or npm init —-y to skip prompts `
 
-The prompts will look like this:
-```js
-package name: (my-project)
-version: (1.0.0)
-description: A simple web application
-entry point: (index.js) // NOTE!
-test command:
-git repository:
-keywords: web application, node.js, express
-author: John Doe
-license: (ISC)
-```
+The prompts at the end will look like this:
 
 ``` diff
 - Make sure to change entry point from index.js to server.js
 ```
-After you have provided the necessary information, npm init will generate a package.json file in your project directory with the configured settings. This file serves as a manifest for your project and contains information about its dependencies, scripts, and other metadata.
+
+```js
+package name: (my-project)
+version: (1.0.0)
+description: 
+entry point: (server.js) // NOTE!
+test command:
+git repository:
+keywords: 
+author: 
+license: (ISC)
+```
+
+After you have provided the necessary information, ` npm init` will generate a package.json file in your project directory with the configured settings. This file serves as a manifest for your project and contains information about its dependencies, scripts, and other metadata.
 
 3. Install Express.js by running the command
 `npm install express`
