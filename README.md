@@ -15,7 +15,7 @@ In summary, Node.js allows us to use JS on the server-side, and Express.js provi
 
 ## Setting up
 Install Node.js
-**Note:** this only needs to be done once, if you’ve done this before, skip this step!
+#### Note:** this only needs to be done once, if you’ve done this before, skip this step!
 
 1. Visit the official Node.js website (https://nodejs.org) and download the latest version compatible with your operating system.
 
@@ -120,7 +120,7 @@ So far we have:
 Open a web browser and visit http://localhost:3000. You should see the message "Hello, World!" displayed.
 
 
-**Note: node and nodemon**
+#### Note: node and nodemon
 When running node server.js, you are executing the server.js file using the Node.js runtime. It starts the server and runs the code within server.js. However, if you make any changes to the server.js file, you need to manually stop and restart the server using node server.js again for those changes to take effect. 
 On the other hand, nodemon automatically restarts the server whenever changes are made to the files.
 
