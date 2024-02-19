@@ -201,6 +201,8 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
 - Models: Models define the structure and behavior of data in our application. They tell us what information we need to store and how it should be organized. 
 - Controllers: Controllers handle the logic and actions for specific routes or endpoints. They process requests, interact with models, and prepare responses to be sent back to the client. 
 - Routes: Routes define URL patterns and HTTP methods that our application will respond to. They map incoming requests to the corresponding controller functions.
+
+
 ![Screenshot 2024-02-19 at 10 35 41 am](https://github.com/zeemohamed7/learn-node-express/assets/142171425/54178863-a8cd-4f00-9b9b-c9035d777e63)
 
 
