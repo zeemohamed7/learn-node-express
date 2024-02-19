@@ -65,16 +65,17 @@ Congrats! You’ve set up your project with Node.js and Express, next step is bu
 ## Building a Basic Express.js Server:
 1. Open server.js in VS code
 2. Import Express.js module:
-`js
+```js
 const express = require('express')
-`
+```
 
 
 4. Create an instance of the Express application:
-`const app = express()`
+```js
+const app = express()`
+```
 
-
-5. Define a route that responds with "Hello, World!":
+6. Define a route that responds with "Hello, World!":
 ```
 app.get('/', (req, res) => {
   res.send('Hello, World!');
