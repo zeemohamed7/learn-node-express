@@ -328,103 +328,14 @@ const todosRoutes = require('./todosRoutes');
 app.use('/', todosRoutes);
 ```
 
+Done!
+
+<script>
+  // Initialize highlight.js
+  hljs.initHighlightingOnLoad();
+</script>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-NOT RELEVANT VVVV
-
-
-
-
-
-
-
-
-
-
-FRONTEND APPLICATIONS 
-Create react
-Npx create-react-app frontend
-
-Initialise dependecies for frontend
-npm i axios react-router-dom
-
-Creating a component to display all Todos:
-Create components folder
-Create TodoIndex.js component
-To use routes,
-
-
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
-
-
-
-Full App.js for index
-import logo from "./logo.svg";
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import TodoIndex from "./components/TodoIndex";
-
-function App() {
-return (
-<>
-<h1> The Todo App </h1>
-<BrowserRouter>
-<Routes>
-{/* Route takes two properties.. path and element */}
-{/* When user goes to /index, render this element TodoIndex in this app*/}
-<Route path="/index" element={<TodoIndex />} />
-</Routes>
-</BrowserRouter>
-</>
-);
-}
-
-export default App;
-
-
-
-
-
-3) In package.json for front-end, add proxy => Link backend and frontend 
-So axios actually works
-"proxy": "http://127.0.0.1:4000/"
-
-
-4) useEffect() Hook
-
-// useEffect() runs something once on load and then everytime page is updated unless it is given an empty array
-
-useEffect(() =>{
-getAllTodos()
-}, [])
-// An empty depedency array causes it to only load once
-
-
-5) useState()
-Deconstruct 
-const [todos, setTodos] = useState('')
 
