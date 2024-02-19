@@ -1,42 +1,42 @@
-# learn-node-express
+# Introduction
+In this tutorial, I will walk you through the process of setting up Express.js and Node.js, two popular frameworks used for building web applications.
 
-Introduction
-In this tutorial, we will walk you through the process of setting up Express.js and Node.js, two popular frameworks used for building web applications.
+## Node.js: 
+Open-source JavaScript runtime environment that allows you to run JavaScript code on the server-side. It allows developers to build server-side applications using JavaScript.
 
-- Node.js: 
-- Open-source JavaScript runtime environment that allows you to run JavaScript code on the server-side. 
-- Allows developers to build server-side applications using JavaScript.
-
-Express.js:
+## Express.js:
 Express.js is like a toolbox or set of tools that makes building web applications using Node.js easier. It provides a collection of pre-built code that developers can use to handle common tasks in web development, such as managing routes (URLs) and handling requests and responses. 
+
 It's like having a set of Lego blocks that you can use to quickly build a website or web application without starting from scratch!
 
 In summary, Node.js allows us to use JS on the server-side, and Express.js provides a convenient way to build web applications using Node.js by providing pre-built tools and functionality.
 
-Setting up
+---
+
+## Setting up
 Install Node.js
 Note: this only needs to be done once, if you’ve done this before, skip this step!
 
-a. Visit the official Node.js website (https://nodejs.org) and download the latest version compatible with your operating system.
+1. Visit the official Node.js website (https://nodejs.org) and download the latest version compatible with your operating system.
 
-b. Run the installer and follow the on-screen instructions to complete the installation process.
+2. Run the installer and follow the on-screen instructions to complete the installation process.
 
-c. Verify the installation by opening a terminal or command prompt and running the command node -v. It should display the installed Node.js version.
+3. Verify the installation by opening a terminal or command prompt and running the command node -v. It should display the installed Node.js version.
 
-Getting Started with Express.js
+---
 
-Create a new project and navigate into it
-mkdir express-project 
-cd express-project
+## Getting Started with Express.js
 
-Run this command to initialize new Node.js project
-npm init
+1. Create a new project and navigate into it
+` mkdir express-project 
+cd express-project `
 
-// or npm init —-y to skip prompts 
+2. Run this command to initialize new Node.js project
+`npm init
+// or npm init —-y to skip prompts `
 
 The prompts will look like this:
-
-
+```
 package name: (my-project)
 version: (1.0.0)
 description: A simple web application
@@ -46,79 +46,90 @@ git repository:
 keywords: web application, node.js, express
 author: John Doe
 license: (ISC)
+```
+**Note:** Make sure to change entry point from index.js to server.js
 
-Note: Make sure to change entry point from index.js to server.js
 After you have provided the necessary information, npm init will generate a package.json file in your project directory with the configured settings. This file serves as a manifest for your project and contains information about its dependencies, scripts, and other metadata.
 
-Install Express.js by running the command
-npm install express
+3. Install Express.js by running the command
+`npm install express`
 
-Create a new file named server.js in the project directory
-mkdir server.js
+4. Create a new file named server.js in the project directory
+`mkdir server.js`
 
 Congrats! You’ve set up your project with Node.js and Express, next step is building a basic Express.js server. Here’s what we have so far:
+![node.js](https://github.com/zeemohamed7/learn-node-express/assets/142171425/2fef2c40-39e2-4a6f-8a27-4ec24f71f7db)
+
+---
+
+## Building a Basic Express.js Server:
+1. Open server.js in VS code
+2. Import Express.js module:
+`const express = require('express') `
 
 
-Building a Basic Express.js Server:
-Open server.js in VS code
-Import Express.js module:
-const express = require('express')
+3. Create an instance of the Express application:
+`const app = express()`
 
 
-Create an instance of the Express application:
-const app = express()
-
-
-Define a route that responds with "Hello, World!":
+4. Define a route that responds with "Hello, World!":
+```
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
+```
+
+**Explanation:**
+
+> We are using express (as an instance) and calling get() to make a GET request on ‘/’ root url 
+> The arrow function has two parameters: *req* and *res*. 
+> *req* stands for "request" and contains information about the incoming request from the user, such as the URL, headers, and any data sent. *res* stands for "response" and is used to send a response back to the user's browser.
+> res.send('Hello, World!'): Here, we are using the res object to send a response back to the user's browser. It's like telling the computer to send a message saying "Hello, World!" back to the user's browser when they visit ‘/’
 
 
- We are using express (as an instance) and calling get() to make a GET request on ‘/’ root url 
-The arrow function has two parameters: req and res. 
-req stands for "request" and contains information about the incoming request from the user, such as the URL, headers, and any data sent. res stands for "response" and is used to send a response back to the user's browser.
-res.send('Hello, World!'): Here, we are using the res object to send a response back to the user's browser. It's like telling the computer to send a message saying "Hello, World!" back to the user's browser when they visit ‘/’
-
-
-Start the server: 
-
+5. Start the server: 
+```
 app.listen(3000, () => {
   console.log('Server started on port 3000');
 });
+```
 
 
-We are asking our Express application to start listening for incoming requests on a specific port number (3000 in this case)
-Port numbers are usually stored in .env files as per convention
+> We are asking our Express application to start listening for incoming requests on a specific port number (3000 in this case)
+> Port numbers are usually stored in .env files as per convention
 
-Testing:
-Make sure you are in the root of your project
-node server.js
+So far we have: 
+![Screenshot 2024-02-19 at 10 02 39 am](https://github.com/zeemohamed7/learn-node-express/assets/142171425/e3f8a894-ce19-4a54-8a1a-34729cc19502)
+
+5. Testing:
+   Make sure you are in the root of your project
+`` node server.js ``
+
+Open a web browser and visit http://localhost:3000. You should see the message "Hello, World!" displayed.
 
 
- Open a web browser and visit http://localhost:3000. You should see the message "Hello, World!" displayed.
-
-
-Note: node and nodemon
+** Note: node and nodemon **
 When running node server.js, you are executing the server.js file using the Node.js runtime. It starts the server and runs the code within server.js. However, if you make any changes to the server.js file, you need to manually stop and restart the server using node server.js again for those changes to take effect. 
 On the other hand, nodemon automatically restarts the server whenever changes are made to the files.
+
 To install nodemon, run:
-npm -g nodemon
+`` npm -g nodemon ``
 
 
-Other dependencies:
+# Other dependencies
 We import dotenv to load environment variables, and mongoose to work with MongoDB databases.
 
-Install other backend dependencies such as dotenv and mongoose
-npm install dotenv mongoose
+1. Install other backend dependencies such as dotenv and mongoose
+`` npm install dotenv mongoose ``
 
 
-Import mongoose
-const mongoose = require('mongoose')
+2. Import mongoose
+`` const mongoose = require('mongoose') ``
 
 
-Mongoose:
-Connect to a MongoDB database by calling the mongoose.connect() function and passing in the MongoDB connection URL:
+## Setting Up Mongoose & Dotenv:
+1. Connect to a MongoDB database by calling the mongoose.connect() function and passing in the MongoDB connection URL:
+```
 mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     // Connection successful
@@ -128,28 +139,31 @@ mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useU
     // Connection failed
     console.error('Error connecting to MongoDB:', error);
   });
-
-
+```
 
 It is best to keep your connection URL in your .env file so others won’t have access to it, we do this using dotenv:
 
-make a .env file
-make a .gitignore
-add this to gitignore:
+2. .env and .gitignore files
+- Create a .env file
+- Create a .gitignore file
+- Add this to gitignore:
+```
 .env
 node_modules
+```
 
-In .env file: 
-# key and value pair
-# convention to keep in all capital letters
-DB_CONNECTION = mongodb://localhost/mydatabase
-
-
-Import dotenv and config in server.js
-require('dotenv').config()
+3. In .env file: 
+`` DB_CONNECTION = mongodb://localhost/mydatabase ``
+- key and value pair
+- convention to keep key in all capital letters
 
 
-Instead of connection string, put process.env.DB_CONNECTION
+4. Import dotenv and config in server.js
+`` require('dotenv').config() ``
+
+
+5. Instead of connection string, put process.env.DB_CONNECTION
+```
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     // Connection successful
@@ -159,6 +173,7 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
     // Connection failed
     console.error('Error connecting to MongoDB:', error);
   });
+```
 
 
 
