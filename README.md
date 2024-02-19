@@ -292,7 +292,7 @@ module.exports = {
 ### Routes
 1. Create todoRoutes.js in routes folder
 2. In the todoRoutes.js file:
-```
+```javascript
 const express = require('express');
 const router = express.Router(); 
 
@@ -329,13 +329,6 @@ app.use('/', todosRoutes);
 ```
 
 Done!
-
-<script>
-  // Initialize highlight.js
-  hljs.initHighlightingOnLoad();
-</script>
-
-
 
 
 
