@@ -96,9 +96,11 @@ app.listen(3000, () => {
 
 
 > We are asking our Express application to start listening for incoming requests on a specific port number (3000 in this case)
+>
 > Port numbers are usually stored in .env files as per convention
 
 So far we have: 
+
 ![Screenshot 2024-02-19 at 10 02 39 am](https://github.com/zeemohamed7/learn-node-express/assets/142171425/e3f8a894-ce19-4a54-8a1a-34729cc19502)
 
 5. Testing:
@@ -174,48 +176,23 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
     console.error('Error connecting to MongoDB:', error);
   });
 ```
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Models, Routes and Controllers
-Models: Models define the structure and behavior of data in our application. They tell us what information we need to store and how it should be organized. 
-Controllers: Controllers handle the logic and actions for specific routes or endpoints. They process requests, interact with models, and prepare responses to be sent back to the client. 
-Routes: Routes define URL patterns and HTTP methods that our application will respond to. They map incoming requests to the corresponding controller functions.
-
-
-
+# Models, Routes and Controllers
+- Models: Models define the structure and behavior of data in our application. They tell us what information we need to store and how it should be organized. 
+- Controllers: Controllers handle the logic and actions for specific routes or endpoints. They process requests, interact with models, and prepare responses to be sent back to the client. 
+- Routes: Routes define URL patterns and HTTP methods that our application will respond to. They map incoming requests to the corresponding controller functions.
 
 We will create a simple to-do application to understand these.
 
-Creating models, routes, controllers
+## Creating models, routes, controllers
 
 
-Models
-Create your model (Todo.js) inside of models folder
-Create a model for todo item:
+### Models
+
+1. Create your model (Todo.js) inside of models folder
+2. Create a model for todo item:
+```
 const mongoose = require('mongoose')
 // Create Schema
 const todoSchema = mongoose.Schema ({
@@ -231,18 +208,17 @@ const Todo = mongoose.model('Todo', todoSchema)
 
 // Export Todo model
 module.exports = Todo;
+```
+
+### Controllers
+1. Create controller (todosController.js) inside of controllers folder
+2. Import Todo model
+` const Todo = require('./models/todo') `
 
 
-Controllers
-Create controller (todosController.js) inside of controllers folder
-Import Todo model
-const Todo = require('./models/todo');
-
-
-In this file, you can define your CRUD operations (Create, Read, Update and Delete)
+3. In this file, you can define your CRUD operations (Create, Read, Update and Delete)
 For example, to create a todo item:
-
-
+```
 // Create a new todo item
 const createTodo = async (req, res) => {
   try {
@@ -255,16 +231,16 @@ const createTodo = async (req, res) => {
 };
 
 module.exports = createTodo
+```
 
 
 
+> *async (req, res) => { ... }*: we use async because of await
+> *const { title, description } = req.body*: extract the title and description properties from the req.body object. The req.body object contains the data sent by the client in the request body.
+> *const todo = await Todo.create({ title, description })*: uses the Todo model (assumed to be imported and defined earlier) to create a new todo item in the database. The await keyword is used because the Todo.create() function is an asynchronous operation that returns a promise. By using await, we wait for the promise to resolve and assign the created todo item to the todo variable.
 
-async (req, res) => { ... } we use async because of await
-const { title, description } = req.body extract the title and description properties from the req.body object. The req.body object contains the data sent by the client in the request body.
-const todo = await Todo.create({ title, description }) uses the Todo model (assumed to be imported and defined earlier) to create a new todo item in the database. The await keyword is used because the Todo.create() function is an asynchronous operation that returns a promise. By using await, we wait for the promise to resolve and assign the created todo item to the todo variable.
-
-Other controllers: 
-
+### Other controllers: 
+```
 // Get all todo items
 const getAllTodos = async (req, res) => {
   try {
@@ -307,15 +283,16 @@ module.exports = {
   deleteTodo
 };
 
+```
+> *const { id } = req.params;* extracts the id parameter from req.params. This assumes that the id parameter is passed in the request URL, such as /todos/:id, where :id represents the dynamic todo item ID.
+> *const { completed } = req.body;* takes the new updated todo from req.body.
+> *const updatedTodo = await Todo.findByIdAndUpdate(id, { completed }, { new: true });* uses the Todo model to find a todo item by its id and update its property with the new todo. The { new: true } option ensures that the updated todo item is returned as the result of the operation. The await keyword is used to wait for the update operation to complete before proceeding.
+> *res.json(updatedTodo);* sends the updated todo item as a JSON response to the client.
 
-const { id } = req.params; extracts the id parameter from req.params. This assumes that the id parameter is passed in the request URL, such as /todos/:id, where :id represents the dynamic todo item ID.
-const { completed } = req.body; takes the new updated todo from req.body.
-const updatedTodo = await Todo.findByIdAndUpdate(id, { completed }, { new: true }); uses the Todo model to find a todo item by its id and update its property with the new todo. The { new: true } option ensures that the updated todo item is returned as the result of the operation. The await keyword is used to wait for the update operation to complete before proceeding.
-res.json(updatedTodo); sends the updated todo item as a JSON response to the client.
-
-Routes
-Create todoRoutes.js in routes folder
-In the todoRoutes.js file:
+### Routes
+1. Create todoRoutes.js in routes folder
+2. In the todoRoutes.js file:
+```
 const express = require('express');
 const router = express.Router(); 
 
@@ -335,22 +312,21 @@ router.put('/todos/:id', todosController.updateTodo);
 router.delete('/todos/:id', todosController.deleteTodo);
 
 module.exports = router;
+```
 
-
-
-Define the routes using the Express Router, specifying the URL paths and the corresponding controller functions to be executed when those routes are accessed.
+> Define the routes using the Express Router, specifying the URL paths and the corresponding controller functions to be executed when those routes are accessed.
 Export this router!
 
-Server.js
+### Server.js
 To tie everything back together:
-In server.js, import and mount the routes
+1. In server.js, import and mount the routes
+```
+// Import routes
 const todosRoutes = require('./todosRoutes');
 
 // Mount the todos routes
 app.use('/', todosRoutes);
-
-
-rt and use the routes by including app.use() with the appropriate route pIn your main app.js file, import and use the routes by including app.use() with the appropriate route path and the imported router.ath and the imported router.
+```
 
 
 
