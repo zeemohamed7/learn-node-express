@@ -36,7 +36,7 @@ cd express-project `
 // or npm init —-y to skip prompts `
 
 The prompts will look like this:
-```
+```js
 package name: (my-project)
 version: (1.0.0)
 description: A simple web application
@@ -65,7 +65,7 @@ Congrats! You’ve set up your project with Node.js and Express, next step is bu
 ## Building a Basic Express.js Server:
 1. Open server.js in VS code
 2. Import Express.js module:
-`const express = require('express') `
+`js const express = require('express') `
 
 
 3. Create an instance of the Express application:
