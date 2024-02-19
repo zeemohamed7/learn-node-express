@@ -49,8 +49,7 @@ license: (ISC)
 ```
 
 ``` diff
-- **Note:**
-- Make sure to change entry point from index.js to server.js
+Make sure to change entry point from index.js to server.js
 ```
 After you have provided the necessary information, npm init will generate a package.json file in your project directory with the configured settings. This file serves as a manifest for your project and contains information about its dependencies, scripts, and other metadata.
 
