@@ -276,7 +276,7 @@ const getAllTodos = async (req, res) => {
   try {
 // Find all todos in database using .find()
     const todos = await Todo.find();
-Display those todos
+// Display those todos
     res.json(todos);
   } catch (error) {
     res.status(500).json({ error: 'Failed to retrieve todo items' });
