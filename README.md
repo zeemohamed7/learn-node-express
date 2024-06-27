@@ -59,7 +59,7 @@ After you have provided the necessary information, `npm init` will generate a pa
 `npm install express`
 
 4. Create a new file named server.js in the project directory
-`mkdir server.js`
+`touch server.js`
 
 Congrats! You’ve set up your project with Node.js and Express, next step is building a basic Express.js server. Here’s what we have so far:
 ![node.js](https://github.com/zeemohamed7/learn-node-express/assets/142171425/2fef2c40-39e2-4a6f-8a27-4ec24f71f7db)
