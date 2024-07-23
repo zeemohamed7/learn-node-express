@@ -278,15 +278,17 @@ const createTodo = async (req, res) => {
 };
 
 module.exports = createTodo
-```
 
 
+<details>
+  <summary>Click to expand</summary>
 
-> *async (req, res) => { ... }*: we use async because of await
-> 
-> *const { title, description } = req.body*: extract the title and description properties from the req.body object. The req.body object contains the data sent by the client in the request body.
-> 
-> *const todo = await Todo.create({ title, description })*: uses the Todo model (assumed to be imported and defined earlier) to create a new todo item in the database. The await keyword is used because the Todo.create() function is an asynchronous operation that returns a promise. By using await, we wait for the promise to resolve and assign the created todo item to the todo variable.
+`async (req, res) => { ... }`: we use async because of await
+
+`const { title, description } = req.body`: extract the title and description properties from the req.body object. The req.body object contains the data sent by the client in the request body.
+
+`const todo = await Todo.create({ title, description })`: uses the Todo model (assumed to be imported and defined earlier) to create a new todo item in the database. The await keyword is used because the Todo.create() function is an asynchronous operation that returns a promise. By using await, we wait for the promise to resolve and assign the created todo item to the todo variable.
+</details>
 
 ### Other controllers: 
 ```js
@@ -330,16 +332,20 @@ module.exports = {
   getAllTodos,
   updateTodo,
   deleteTodo
-};
+};```
 
-```
-> *const { id } = req.params;* extracts the id parameter from req.params. This assumes that the id parameter is passed in the request URL, such as /todos/:id, where :id represents the dynamic todo item ID.
-> 
-> *const { completed } = req.body;* takes the new updated todo from req.body.
-> 
-> *const updatedTodo = await Todo.findByIdAndUpdate(id, { completed }, { new: true });* uses the Todo model to find a todo item by its id and update its property with the new todo. The { new: true } option ensures that the updated todo item is returned as the result of the operation. The await keyword is used to wait for the update operation to complete before proceeding.
-> 
-> *res.json(updatedTodo);* sends the updated todo item as a JSON response to the client.
+<details>
+  <summary>Click to expand</summary>
+
+`const { id } = req.params;` extracts the id parameter from req.params. This assumes that the id parameter is passed in the request URL, such as /todos/:id, where :id represents the dynamic todo item ID.
+
+`const { completed } = req.body;` takes the new updated todo from req.body.
+
+`const updatedTodo = await Todo.findByIdAndUpdate(id, { completed }, { new: true });` uses the Todo model to find a todo item by its id and update its property with the new todo. The { new: true } option ensures that the updated todo item is returned as the result of the operation. The await keyword is used to wait for the update operation to complete before proceeding.
+
+`res.json(updatedTodo);` sends the updated todo item as a JSON response to the client.
+
+</details>
 
 ### Routes
 1. Create todoRoutes.js in routes folder
