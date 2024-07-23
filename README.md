@@ -390,7 +390,7 @@ app.use('/', todosRoutes);
 
 Done!
 <details><summary>Directory tree example</summary>
-
+```bash
 ├── config
 │   └── database.js
 ├── controllers
@@ -407,6 +407,7 @@ Done!
     │   ├── sign-in.ejs
     │   └── sign-up.ejs
     └── index.ejs
+```
 </details>
 Created by Zainab Mohamed
 
