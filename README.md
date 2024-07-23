@@ -397,3 +397,6 @@ Example of structure of directories:
 
 Created by Zainab Mohamed
 
+
+## Extra Resources
+[Creating salt rounds](https://www.uuidgenerator.net/version4)
