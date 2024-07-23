@@ -389,6 +389,24 @@ app.use('/', todosRoutes);
 ```
 
 Done!
+<details><summary>Directory tree example</summary>
 
+├── config
+│   └── database.js
+├── controllers
+│   └── auth.js
+├── middleware
+│   └── is-signed-in.js
+├── models
+│   └── user.js
+├── package-lock.json
+├── package.json
+├── server.js
+└── views
+    ├── auth
+    │   ├── sign-in.ejs
+    │   └── sign-up.ejs
+    └── index.ejs
+</details>
 Created by Zainab Mohamed
 
