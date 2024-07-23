@@ -391,21 +391,25 @@ app.use('/', todosRoutes);
 Done!
 
 Example of structure of directories:
+.
 ├── config
-│   └── database.js
+│   └── config.js
 ├── controllers
-│   └── auth.js
+│   └── authController.js
 ├── middleware
-│   └── is-signed-in.js
+│   └── isSignedIn.js
 ├── models
-│   └── user.js
+│   └── User.js
 ├── package-lock.json
 ├── package.json
+├── routes
+│   ├── authRoutes.js
+│   └── indexRoutes.js
 ├── server.js
 └── views
     ├── auth
-    │   ├── sign-in.ejs
-    │   └── sign-up.ejs
+    │   ├── signIn.ejs
+    │   └── signUp.ejs
     └── index.ejs
 Created by Zainab Mohamed
 
