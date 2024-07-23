@@ -391,7 +391,7 @@ app.use('/', todosRoutes);
 Done!
 
 Example of structure of directories:
-<img width="724" alt="Directory tree example">
+<img width="726" alt="Directory tree example" src="https://github.com/user-attachments/assets/8c1aa547-208e-4294-aa01-977e00243e7f">
 
 Created by Zainab Mohamed
 
