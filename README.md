@@ -12,12 +12,7 @@ It's like having a set of Lego blocks that you can use to quickly build a websit
 In summary, Node.js allows us to use JS on the server-side, and Express.js provides a convenient way to build web applications using Node.js by providing pre-built tools and functionality.
 
 ---
-<details>
-  <summary>Click to expand</summary>
 
-  This is the content that will be hidden initially and shown when the user clicks the summary.
-
-</details>
 
 ## Setting up
 Install Node.js
