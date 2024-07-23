@@ -108,9 +108,9 @@ app.listen(3000, () => {
 
 <details><summary>Explanation</summary>
 
-> We are asking our Express application to start listening for incoming requests on a specific port number (3000 in this case)
->
-> Port numbers are usually stored in .env files as per convention
+We are asking our Express application to start listening for incoming requests on a specific port number (3000 in this case)
+
+Port numbers and salt numbers are usually stored in .env files
 
 </details>
 So far we have: 
@@ -145,7 +145,8 @@ with `npm install --save-dev nodemon`
 ```js
 "scripts": {
   "dev": "nodemon app.js"
-}``
+}
+```
 
 
 # Other dependencies
