@@ -85,16 +85,17 @@ app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 ```
+<details><summary>Explanation</summary>
 
-**Explanation:**
+ We are using express (as an instance) and calling get() to make a GET request on ‘/’ root url
 
-> We are using express (as an instance) and calling get() to make a GET request on ‘/’ root url
-> 
-> The arrow function has two parameters: *req* and *res*.
-> 
-> *req* stands for "request" and contains information about the incoming request from the user, such as the URL, headers, and any data sent. *res* stands for "response" and is used to send a response back to the user's browser.
-> 
-> res.send('Hello, World!'): Here, we are using the res object to send a response back to the user's browser. It's like telling the computer to send a message saying "Hello, World!" back to the user's browser when they visit ‘/’
+The arrow function has two parameters: *req* and *res*.
+
+ `req` stands for "request" and contains information about the incoming request from the user, such as the URL, headers, and any data sent. `res` stands for "response" and is used to send a response back to the user's browser.
+
+`res.send('Hello, World!')`: Here, we are using the res object to send a response back to the user's browser. It's like telling the computer to send a message saying "Hello, World!" back to the user's browser when they visit ‘/’
+
+</details>
 
 
 5. Start the server: 
@@ -104,11 +105,13 @@ app.listen(3000, () => {
 });
 ```
 
+<details><summary>Explanation</summary>
 
 > We are asking our Express application to start listening for incoming requests on a specific port number (3000 in this case)
 >
 > Port numbers are usually stored in .env files as per convention
 
+</details>
 So far we have: 
 
 ![Screenshot 2024-02-19 at 10 02 39 am](https://github.com/zeemohamed7/learn-node-express/assets/142171425/e3f8a894-ce19-4a54-8a1a-34729cc19502)
@@ -126,6 +129,22 @@ On the other hand, nodemon automatically restarts the server whenever changes ar
 
 To install nodemon, run:
 `` npm -g nodemon ``
+
+Then, instead of running node server.js, run:
+`` nodemon server.js ``
+This will start the server and automatically restart it whenever changes are made to the server.js file.
+
+*Note:* Installing nodemon globally isn't recommended, instead:
+1) Save it as development script in your package.json file:
+with `npm install --save-dev nodemon`
+
+2) Open your package.json file and locate the "scripts" section. If it doesn't exist, you can add it.
+
+3) Inside the "scripts" section, add a new script entry for "dev" (or any other name you prefer) and set the value to "nodemon [your-entry-point-file.js]". For example:
+```js
+"scripts": {
+  "dev": "nodemon app.js"
+}``
 
 
 # Other dependencies
