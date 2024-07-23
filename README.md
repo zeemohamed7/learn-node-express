@@ -333,7 +333,8 @@ module.exports = {
   getAllTodos,
   updateTodo,
   deleteTodo
-};```
+};
+```
 
 <details>
   <summary>Click to expand</summary>
@@ -351,7 +352,7 @@ module.exports = {
 ### Routes
 1. Create todoRoutes.js in routes folder
 2. In the todoRoutes.js file:
-```javascript
+```js
 const express = require('express');
 const router = express.Router(); 
 
