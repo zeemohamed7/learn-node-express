@@ -198,7 +198,7 @@ On the other hand, nodemon automatically restarts the server whenever changes ar
 To install nodemon, run:
 
 ```bash
-npm -g nodemon
+npm i -g nodemon
 ```
 
 Then, instead of running node server.js, run:
