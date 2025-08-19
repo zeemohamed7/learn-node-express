@@ -118,6 +118,18 @@ app.get('/', (req, res) => {
 })
 ```
 
+<details><summary>Explanation</summary>
+
+We are using express (as an instance) and calling get() to make a GET request on ‘/’ root url
+
+The arrow function has two parameters: _req_ and _res_.
+
+`req` stands for "request" and contains information about the incoming request from the user, such as the URL, headers, and any data sent. `res` stands for "response" and is used to send a response back to the user's browser.
+
+`res.send('Hello, World!')`: Here, we are using the res object to send a response back to the user's browser. It's like telling the computer to send a message saying "Hello, World!" back to the user's browser when they visit ‘/’
+
+</details>
+
 5. Add middleware
 
 This middleware parses incoming JSON requests and puts the parsed data in req.body. Without it, req.body would be undefined.
@@ -149,18 +161,6 @@ Use this if you’re handling form submissions like:
   <input name="description" />
 </form>
 ```
-
-<details><summary>Explanation</summary>
-
-We are using express (as an instance) and calling get() to make a GET request on ‘/’ root url
-
-The arrow function has two parameters: _req_ and _res_.
-
-`req` stands for "request" and contains information about the incoming request from the user, such as the URL, headers, and any data sent. `res` stands for "response" and is used to send a response back to the user's browser.
-
-`res.send('Hello, World!')`: Here, we are using the res object to send a response back to the user's browser. It's like telling the computer to send a message saying "Hello, World!" back to the user's browser when they visit ‘/’
-
-</details>
 
 5. Start the server:
 
