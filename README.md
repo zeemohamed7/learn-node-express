@@ -490,7 +490,7 @@ const router = express.Router()
 const todosController = require('../controllers/todosController')
 
 // Create a new todo item
-router.post('/new', todosController.createTodo)
+router.post('/', todosController.createTodo)
 
 // Get all todo items
 router.get('/', todosController.getAllTodos)
